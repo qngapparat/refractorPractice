@@ -1,24 +1,13 @@
 public class Player {
 	public int wins; // # of wins
-	public String currentChoice;
+	public int currentChoice;
 	/**
 	 * Randomly choose rock, paper, or scissors
 	 */
 	public void randomChoice() {
-		String choice = "";
-		int c = (int) (Math.random() * 3);
-		switch (c) {
-		case 0:
-			choice = ("rock");
-			break;
-		case 1:
-			choice = ("paper");
-			break;
-		case 2:
-			choice = ("scissors");
-			break;
-		}
-		this.currentChoice = choice;
+
+		this.currentChoice = (int) (Math.random() * 3);
+
 	}
 
 	public int setWins() {
@@ -28,4 +17,24 @@ public class Player {
 	public int getWins() {
 		return (wins);
 	}
+
+	public String toString(){
+	    if(currentChoice == 0){
+	        return "Rock";
+        }
+        if(currentChoice == 1){
+            return "Paper";
+        }
+        if(currentChoice == 2){
+            return "Scissor";
+        }
+        if(currentChoice == 3){
+            return "Lizard";
+        }
+        if(currentChoice == 4){
+            return "Spock";
+        }
+
+        //expand here
+    }
 }

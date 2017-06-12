@@ -1,5 +1,8 @@
 public class Game {
 
+    //change to 5 for Lizard + Spock addition
+    int maxTypes = 3;
+
     int draw = 0;
     int roundsPlayed = 0;
     boolean gameWon = false;
@@ -13,34 +16,24 @@ public class Game {
         System.out.println("***** Round: " + myGame.roundsPlayed + " *********************\n");
         System.out.println("Number of Draws: " + myGame.draw + "\n");
         p1.randomChoice();
-        System.out.println("Player 1: " + p1.currentChoice + "\t Player 1 Total Wins: " + p1.wins);
+        System.out.println("Player 1: " + p1.toString() + "\t Player 1 Total Wins: " + p1.wins);
         p2.randomChoice();
-        System.out.println("Player 2: " + p2.currentChoice + "\t Player 2 Total Wins: " + p2.wins);
+        System.out.println("Player 2: " + p2.toString() + "\t Player 2 Total Wins: " + p2.wins);
     }
 
-    public void evaluate(Player p1, Player p2){
+    public void evaluate(Player p1, Player p2) throws Exception {
 
-        //doesn't really make sense to cut this in half etc or to compress it, which would be a tradeoff for readability.
-        if ((p1.currentChoice.equals("rock")) && (p2.currentChoice.equals("paper"))) {
-            System.out.println("Player 2 Wins");
-            p2.wins++;
-        } else if ((p1.currentChoice.equals("paper")) && (p2.currentChoice.equals("rock"))) {
-            p1.wins++;
-            System.out.println("Player 1 Wins");
-        } else if ((p1.currentChoice.equals("rock")) && (p2.currentChoice.equals("scissors"))) {
-            p1.wins++;
-            System.out.println("Player 1 Wins");
-        } else if ((p1.currentChoice.equals("scissors")) && (p2.currentChoice.equals("rock"))) {
-            p2.wins++;
-            System.out.println("Player 2 Wins");
-        } else if ((p1.currentChoice.equals("scissors")) && (p2.currentChoice.equals("paper"))) {
-            p1.wins++;
-            System.out.println("Player 1 Wins");
-        } else if ((p1.currentChoice.equals("paper")) && (p2.currentChoice.equals("scissors"))) {
-            p2.wins++;
-            System.out.println("Player 2 Wins");
+        if((maxTypes%2) == 0){
+            throw new Exception("Number of possibilities must be odd");
         }
 
+        int a = p1.currentChoice;
+        int b = p2.currentChoice;
+
+        int result = (maxTypes + a - b) % maxTypes;
+        if(result == 0){
+
+        }
     }
 
     public void isDraw(Game myGame, Player p1, Player p2){
