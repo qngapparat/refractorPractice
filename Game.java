@@ -34,7 +34,7 @@ public class Game {
 
         //it's a draw. Stats will be updated by isDraw
         if(result == 0){
-           return; 
+           return;
         }
 
         else if((result%2) == 1){
