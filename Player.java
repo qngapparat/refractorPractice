@@ -1,6 +1,5 @@
 public class Player {
-	int wins; // # of wins
-	int winTotal;
+	public int wins; // # of wins
 	public String currentChoice;
 	/**
 	 * Randomly choose rock, paper, or scissors
@@ -10,21 +9,20 @@ public class Player {
 		int c = (int) (Math.random() * 3);
 		switch (c) {
 		case 0:
-			this.currentChoice = ("rock");
+			choice = ("rock");
 			break;
 		case 1:
-			this.currentChoice = ("paper");
+			choice = ("paper");
 			break;
 		case 2:
-			this.currentChoice = ("scissors");
+			choice = ("scissors");
 			break;
 		}
-		return;
+		this.currentChoice = choice;
 	}
 
 	public int setWins() {
-		int winTotal = wins++;
-		return winTotal;
+		return wins++;
 	}
 
 	public int getWins() {
