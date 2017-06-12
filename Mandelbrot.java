@@ -24,11 +24,11 @@ public class Mandelbrot {
                 double b = 0.0;
                 Complex myComplex = new Complex(0.0, 0.0);
                 for (int j = 0; j < maxIterations; j++) {
-                    /*double realPart = (a * a) - (b * b) + xCoordinate;
+                    double realPart = (a * a) - (b * b) + xCoordinate;
                     double imaginaryPart = 2 * a * b + yCoordinate;
                     a = realPart;
                     b = imaginaryPart;
-                    //set the Complex numbers real and imaginary part to a and b*/
+                    //set the Complex numbers real and imaginary part to a and b
                     myComplex.set(a, b);
                     if (myComplex.absolute() > Mandelbrot.infinityThreshold) {
                         break;
