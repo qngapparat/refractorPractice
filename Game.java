@@ -1,5 +1,22 @@
+import java.util.ArrayList;
+
 public class Game {
-	public static void main(String args[]) {
+
+    public void printResult(ArrayList<Player> playerList){
+        for(Player player: playerList){
+
+        }
+    }
+
+    public ArrayList<Player> act(ArrayList<Player> playerList){
+        for(Player player: playerList){
+            player.randomChoice();
+        }
+
+        return playerList;
+    }
+
+    public static void main(String args[]) {
 		Player p1 = new Player();
 		Player p2 = new Player();
 		boolean gameWon = false;
@@ -13,9 +30,9 @@ public class Game {
 		do {
 			System.out.println("***** Round: " + roundsPlayed + " *********************\n");
 			System.out.println("Number of Draws: " + draw + "\n");
-			p1Choice = p1.playerChoice();
+			p1Choice = p1.randomChoice();
 			System.out.println("Player 1: " + p1Choice + "\t Player 1 Total Wins: " + p1Wins);
-			p2Choice = p2.playerChoice();
+			p2Choice = p2.randomChoice();
 			System.out.println("Player 2: " + p2Choice + "\t Player 2 Total Wins: " + p2Wins);
 			if ((p1Choice.equals("rock")) && (p2Choice.equals("paper"))) {
 				System.out.println("Player 2 Wins");
@@ -46,6 +63,6 @@ public class Game {
 				System.out.println("GAME WON");
 			}
 			System.out.println();
-		} while (gameWon != true);
+		} while (!gameWon);
 	}
 }

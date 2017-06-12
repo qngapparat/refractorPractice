@@ -1,25 +1,25 @@
 public class Player {
 	int wins; // # of wins
 	int winTotal;
-
+	public String currentChoice;
 	/**
 	 * Randomly choose rock, paper, or scissors
 	 */
-	public String playerChoice() {
+	public void randomChoice() {
 		String choice = "";
 		int c = (int) (Math.random() * 3);
 		switch (c) {
 		case 0:
-			choice = ("rock");
+			this.currentChoice = ("rock");
 			break;
 		case 1:
-			choice = ("paper");
+			this.currentChoice = ("paper");
 			break;
 		case 2:
-			choice = ("scissors");
+			this.currentChoice = ("scissors");
 			break;
 		}
-		return choice;
+		return;
 	}
 
 	public int setWins() {
