@@ -2,7 +2,7 @@
 Practising debugging and refactoring of Java code.
 
 #### Notes:
-I didn't strictly stick to the 15-line requirement. Most methods are under 15 lines, but I decided not to delete comments or needlessly compress anything for the readability's sake.
+I didn't strictly stick to the 15-line requirement. Most methods are under 15 lines, but I decided not to delete comments or needlessly compress anything for the readability's sake, since this isn't really a codegolf challenge.
 
 However, all methods are specialized so that they are reusable and easily readable/editable.
 
